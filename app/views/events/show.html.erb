@@ -1,0 +1,14 @@
+<div id="content_main">
+<h3 class="inline"><%=h @event.title%></h3> <%= lang_choice(@event) %><br>
+
+<%= @event.body %>
+
+</div>
+<div id="content_right">
+  <%= countries_list(@event) %>
+</div>
+
+
+  <%content_for(:admin_actions) do%>
+     <%= link_to 'Редактировать', edit_event_path(@event) %>
+  <%end%>

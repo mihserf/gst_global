@@ -1,0 +1,53 @@
+
+<%=tabs(:tab1=>"Список стран")%>
+
+
+
+
+
+<table class="admin_table">
+  
+<% for country in @countries %>
+  <tr>
+    <td><%=lang_id(country.lang)%></td>
+    <td><%= link_to country.name, lang_country_path(lang_id(country.lang),country.ident_name) %></td>
+    <td><%= link_to image_tag("/images/edit_ico.gif",:alt=>"Редактировать"), edit_country_path(country) %></td>
+    <td><%= link_to image_tag("/images/delete_ico.gif",:alt=>"Удалить"), country, :confirm => 'Подтвердите удаление', :method => :delete %></td>
+    <td>
+    <a href="#" class="toggle_link">города</a> <%= link_to  image_tag("/images/add_ico.gif",:alt=>"Добавить город"), new_country_city_path(country,:lang=>country.lang) %>
+    <div class="toggle_div">
+    <table>
+      <%  for city in country.cities%>
+      <tr>
+        <td><%= lang_id(city.lang)%></td>
+        <td><%= link_to city.name, lang_country_city_path(lang_id(country.lang),country.ident_name, city.ident_name) %></td>
+        <td><%= link_to image_tag("/images/edit_ico.gif",:alt=>"Редактировать"), edit_country_city_path(country,city) %></td>
+        <td><%= link_to image_tag("/images/delete_ico.gif",:alt=>"Удалить"), city, :confirm => 'Подтвердите удаление', :method => :delete %></td>
+         <td>
+          <a href="#" class="toggle_link">отзывы</a> <%= link_to  image_tag("/images/add_ico.gif",:alt=>"Добавить отзыв"), new_city_opinion_path(city,:lang=>country.lang) %>
+          <div class="toggle_div">
+          <table>
+            <%  for opinion in city.opinions%>
+            <tr>
+              <td><%= lang_id(opinion.lang)%></td>
+              <td><%= link_to opinion.author, lang_city_opinion_path(lang_id(opinion.lang),city.ident_name, opinion.id) %></td>
+              <td><%= link_to image_tag("/images/edit_ico.gif",:alt=>"Редактировать"), edit_city_opinion_path(city,opinion) %></td>
+              <td><%= link_to image_tag("/images/delete_ico.gif",:alt=>"Удалить"), opinion, :confirm => 'Подтвердите удаление', :method => :delete %></td>
+
+            </tr>
+            <% end %>
+          </table>
+          </div>
+          </td>
+      </tr>
+      <% end %>
+    </table>
+    </div>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Добавить страну', new_country_path %>

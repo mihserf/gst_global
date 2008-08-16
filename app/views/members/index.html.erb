@@ -1,0 +1,46 @@
+<%=tabs(:tab1=>"Члены GST")%>
+
+<table class="admin_table">
+<%current_lang=nil%>
+<% for member in @members %>
+    <% unless current_lang==member.lang %>
+        <%current_lang=member.lang%>
+        <tr><td><%=lang_id(current_lang)%></td></tr>
+    <%end%>
+    <tr>
+        <td><%= link_to(member.name, member_path(member))%></td>
+        <td><%= link_to image_tag("/images/edit_ico.gif",:alt=>"Редактировать"), edit_member_path(member) %></td>
+        <td><%= link_to image_tag("/images/delete_ico.gif",:alt=>"Удалить"), member, :confirm => 'Подтвердите удаление', :method => :delete %></td>
+
+        <td>история: </td>
+        <td>
+            <%  unless member.story.nil? %>
+                <% story = member.story %>
+                <%=  link_to('посмотреть', member_story_path(member))%>
+                <%= link_to image_tag("/images/edit_ico.gif",:alt=>"Редактировать"), edit_member_story_path(member) %>
+                <%= link_to image_tag("/images/delete_ico.gif",:alt=>"Удалить"), story, :confirm => 'Подтвердите удаление', :method => :delete %>
+            <%  else %>
+                <%= link_to image_tag("/images/add_ico.gif",:alt=>"Добавить"), new_member_story_path(member) %>
+            <% end %>
+        </td>
+
+        <td>история успеха: </td>
+        <td>
+            <%  unless member.success_story.nil? %>
+                <% success_story = member. success_story %>
+                <%= link_to('посмотреть', success_story_path(success_story))%>
+                <%= link_to image_tag("/images/edit_ico.gif",:alt=>"Редактировать"), edit_member_success_story_path(member) %>
+                <%= link_to image_tag("/images/delete_ico.gif",:alt=>"Удалить"),  success_story, :confirm => 'Подтвердите удаление', :method => :delete %>
+            <%  else %>
+                <%= link_to image_tag("/images/add_ico.gif",:alt=>"Добавить"), new_member_success_story_path(member) %>
+            <% end %>
+        </td>
+
+    </tr>
+  <tr></tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Добавить члена', new_member_path %>

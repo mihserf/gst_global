@@ -1,0 +1,220 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".success_story_full").hide();
+	$(".toggle_link").click(function(){$(this).parent().next(".toggle_div").toggle("fast", function(){setHeightAll();}); if ($(this).text()=="Read more") {$(this).text("Hide");} else {$(this).text("Read more")}  return false});
+});
+
+
+</script>
+
+        
+        <%=tabs(:tab1=>"GST",:tab2=>:news.l("News"),:tab3=>:success_stories.l("Success stories"))%>
+        
+
+                <div id="page-1">
+                    <%=@page.content%>
+                	<div style="clear:both"></div>
+                    <div id="projects">
+                    	<div id="projects_title">Our projects</div>
+                        <div id="projects_body">
+                        <div><a href="pr2.php"><img src="images/projects/airline.jpg" /></a><div class="img_description"><a href="pr2.php">VIP-Airlines Club</a></div></div>
+                        <div><a href="pr4.php"><img src="images/projects/bestfoods.jpg" /></a><div class="img_description"><a href="pr4.php">Food factory �Best Foods�</a></div></div>
+                        <div><a href="http://premierboatandyachtclub.com.ua/"><img src="images/projects/boat.jpg" /></a><div class="img_description"><a href="http://premierboatandyachtclub.com.ua/">Premier Boat and Yacht Club</a></div></div>
+                        <div><a href="http://www.premierlimousines.com.ua/"><img src="images/projects/lim.jpg" /></a><div class="img_description"><a href="http://www.premierlimousines.com.ua/">Premier Limousine</a></div></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="page-2">
+
+                  <div id="top_news">
+<h2 id=linkhead1><a href="company_news.php" style="text-decoration:none;" id="id=LinkHead1">News</a></h2>
+<a href="konf.php" class="link_title">Press-release on �Leaders� conference� held from 27 till 30 of June 2008 in Premier Resorts International, the Sea of Azov</a>
+<p>
+From 27 to 30 of June 2008 GST �Leaders� conference� took place at the Premier Resorts International, �Red Carnation�. This event has become a traditional holiday for those people who decided to devote their lives to spreading financial knowledge among the people and teaching secrets of the millionaires.
+</p>
+<br>
+
+<a href="Bistriy_start_en.php" class="link_title">The Key Moments of Quick Start Held in Kyiv on 4th and 5th of June.</a>
+
+<p>
+The Training started with the speech of Vladimir, the Country Trainer. People were really caught by the exciting business and psychology insight Vladimir had delivered to the audience.
+There were about 150 people in the hall, everybody was waiting for the main event of the training, and everybody was impatient to see the millionaire-mentor Robert Fletcher.
+</p>
+<br>
+<a href="protectdeti.php" class="link_title">June the 1st � Children�s Day</a>
+<p>
+GST partners in Lugansk took an active part in city events devoted to children�s holiday. In the first day of summer the children�s park turned into a miracle land called �Childhood�. Beautiful, happy and cheerful children enthusiastically took part in street painting, sport competitions, quizzes and other events.
+</p>
+<br>
+<a href="egypten.php" class="link_title">Trip to Egypt</a>
+<p>
+Dreams come true with GST! The leaders of GST say so describing their tour to Egypt, Sharm El� Sheikh on May, 29 - June, 1. This tour was full of pleasant impressions! Today Sharm El� Sheikh is one of the most prestigious Egyptian resorts. Its name means �The King�s Bay� in local language, and the resort is truly royal in all senses. You won�t find any factories, or plants in this area! Everything is created here only for entertainment 24 hours a day.
+</p>
+<br>
+<a href="highlight.php" class="link_title">The Highlights of the Leaders� Conference Recreation Activities Held from 25th to 27th of May at Our Primorsk Resort</a>
+<p>
+The Leaders� Conference has become a remarkable event. There were about 400 trainers: Senior Trainers, Area Sales Directors� Trainees, Area Sales Directors, Regional Sales Directors, Country Trainers, International Trainers, - came to Primorsk Resort.
+</p>
+<br>
+
+<a href=trenu.php class="link_title">Trainings are acceleration.</a>
+<p>
+There is official and hidden unemployment in Ukraine. But nevertheless representatives almost of all branches of economics feel lack of professionals. That to answer to demands of professional aptitude it is necessary to study in a right way.
+</p>
+</div>
+<div id="top_mass_media">
+
+	<h2><a href="mass_media.php" style="text-decoration:none;" id="id=LinkHead2">New mass media articles</a></h2>
+	<?
+    	include_once('mednewslink.php')
+	?>
+</div>
+<div style="clear:both"></div>
+<div id="jim_articles">
+
+<h2>Jim Fletcher's Articles</h2>
+
+Co-founder of Global Media Advertising agency, Jim Fletcher wrote several articles about the secrets of the millionaires in his individual manner.
+<br />
+<a href="jimart.php">Read more</a>
+<p></p><p></p><p></p>
+</div>
+
+                </div>
+                <script type="text/javascript">$("#page-2").attr({style:"display:none"})</script>
+                <div id="page-3">
+
+
+                        <div  class="success_story">
+                        <h3>Olga (international country trainer)</h3>
+
+                        <img src="stories/Dubrovskya.jpg"  alt=""  align=left hspace='5' vspace='0' width=200>
+                            <div class="success_story_short">
+                               Every person asks himself a question � what should I do to become successful? What sequence of actions should I do to reach success?  There is a certain sequence of actions � if from the beginning a person has a burning desire, a dream to become successful he will set a goal and plan his actions. Without setting a goal, without accurate plan of actions it�s impossible to start your way to success. And when we start acting the most interesting is taking place. A person learns to do the things he has never been doing before. And many people don�t like it because avoiding difficulties they don�t act and stay at the same place where they�ve been before. But these are difficulties that give us opportunity to get knowledge, skills and abilities. As persistent you will be in perfecting your goal, as strong your perseverance will be the results of that height you will reach.   And each person opens his own resource, shows his potential.
+                                <div><a class="toggle_link" href="#">Read more</a></div>
+                                <div class="toggle_div success_story_full">
+                                     It�s impossible to give you something because you already have all the necessary things to achieve success, these qualities should be just found and developed in yourselves. And if we take a look at how Robert Fletcher achieved his success, it�s easy to see that he refused many things for achieving his goal, he sacrificed his youth, time, everything for the sake of success. For me he is number one man. If you want to be the best just say yourself: �I�ll be number one person!� You can be number two but why somebody should get more than you? If somebody is close on your heels, try to accept this like a lesson and get more experience, more skills and abilities. Then you will have things you have never had before.
+<br /><br />
+It�s better to get 1% from the work of 100 people than 100% of your own work. When a person gets necessary qualities � he builds a team and from the quality of selected people the success of the whole team depends. Everybody has different qualities but the most important is that everybody should do the things he is the best at.
+<br /><br />
+For the success it�s important to understand what sales are. When there are sales there is a cash flow. But when we think about sales probably we talk mostly about money. And if we want to marry and are searching for the only one person we are trying to please him, to be beautiful, show the sense of humor and our best qualities, we are trying to make somebody love us. It�s a sale, we offer ourselves and we are bought or not. And people who come to our system are a stream. And we become salesmen, we offer people our faith, share our burning desire, our dream. We can light others by the flame we have inside. It�s better to follow the person, who went through the bog and knows how to go through it, knows where the path is and where the ground. If somebody is weak in something, he should become strong in that. Or you will always stay at the same level. If you are talented that doesn�t mean that you will be wealthy just having a talent. You will have to develop your talents! And it�s important to take responsibility for your success, for your life � nobody else can do this. It�s a very hard work but only in the result of that work we get spiritual, personal and professional growth.
+<br /><br />
+
+                                </div>
+                            </div>
+                          </div>
+
+
+
+
+
+
+						<div  class="success_story">
+                        <h3>Andrey (international sales trainer, Lugansk)</h3>
+
+                        <img src="stories/andr.jpg"  alt=""  align=left hspace='5' vspace='0' width=200>
+                            <div class="success_story_short">
+                                Hello, my name is Andrey. I was born in Lugansk and I've grown up there.<br /><br />
+
+I did a military service in the Soviet Army at the 27th special assignment brigade. In 1991 I took part in the putsch. I entered the Lugansk East-Ukrainian University after doing a military service. My specialty was electrical engineering. Having graduated from the university I worked as the assistant of the spaghetti production department manager at the factory and later I was promoted to its manager. Then I occupied the position of power engineering specialist at a mill section. All that time thoughts were coming to my mind: "Will I always be just paid for my job? When will I create my own business that brings me income?" I was always looking for the different ways to enrich my income.
+                                <div><a class="toggle_link" href="#">Read more</a></div>
+                                <div class="toggle_div success_story_full">
+                                    In 2000 I met Olga Dubrovskaya and Irina Nesheret who showed me the way how to create the stable money flow with the help of network marketing business. This business taught me how to set goals and how to reach them. How to set the financial goals! I was taught recruiting, selling, communicating, and building a team. I have my own successful business in Ukraine, Russia, Poland that brings me 2000 Euro per month. I teach people how to start this business and they got the same results! I was engaged in self-education, assisted a lot of trainings of Mr. Dubkovsky, Sergey Vsekhsviatsky, Randy Gage, Don File, Brian Tracy.
+<br /><Br />
+The book of Robert Kyosaki "Retire Young Retire Rich" helped me to set a new goal - to make 1 000 000 Euro per year! It was very important to have a millionaire mentor. And all that happened in 2004.
+<br /><Br />
+I was constantly searching for a mentor! All my thoughts were focused on it! And I can tell you why! The answer is pretty clear: my income was still 2000 Euro and there was no rise. I was looking for some new knowledge which would help me to go forward. I met Robert Fletcher in June. He showed me the way. He told me that only if I could change my mind and my business vision I would create million dollar projects.
+<br /><Br />
+I was begging Robert Fletcher to be my tutor. He was keeping refusing and scolding me! And when I got all his assignments I had solved them all! He asked me how much can I give for my success. I told him that I'd do anything within the limits of the law! Then he started teaching me millionaire formulas, investing strategies in your own business.
+<br /><Br />
+I got a lot of new possibilities! I was really inspired by all the information that was given to me by Robert Fletcher! Now I attend Robert Fletcher's trainings 50 hours a week. My mind is constantly broadening. Having applied that millionaire's formulas in practice I observe that my business is developing rapidly. Now I see all that new opportunities they have in Europe but which are not yet reachable for Ukraine. I make million dollar plans, not thousand dollar plans as before. Robert Fletcher knowledge can make money work for you. Millionaire formulas allow you to spend less time and make more money. Why? The answer is logical - millionaires think differently. I have a goal to create a financial educating system in Ukraine that could teach people to be financially literal. And when this knowledge will be applied in practice Ukraine will be the richest country of the world.
+<br /><Br />
+Thanks to GST I raised my income in 4 times. In 4 months I got a great Mercedes car and a Rolex watch. GST is a renaissance of Ukraine. I want to thank Robert Fletcher mentoring me, for his millionaire formulas. Great thanks to all GST partners and staff.
+                                </div>
+                            </div>
+                          </div>
+
+
+
+                        <div  class="success_story">
+                        <h3>Sergey (international sales trainer, Sevastopol)</h3>
+
+                        <img src="stories/Savlovich.jpg"  alt=""  align=left hspace='5' vspace='0' width=200>
+                            <div class="success_story_short">
+                                 Business - is your life. And the quality of your life depends on the way you earn the money. Forget about unimportant, secondary things, don�t waste your time on them� I wish all of you to act! The essence of a person�s life is in the development, expansion, movement.
+
+                                <div><a class="toggle_link" href="#">Read more</a></div>
+                                <div class="toggle_div success_story_full">
+                                �The problem of Ukrainians is that we don�t know how to be successful; we don�t have universities, which teach how to become millionaires. But if you teach a person how to catch a big fish � he will do it. There�s just a number of rules which he must know and they are sure to bring success.
+Business - is your life. And the quality of your life depends on the way you earn the money. Forget about unimportant, secondary things, don�t waste your time on them� I wish all of you to act! The essence of a person�s life is in the development, expansion, movement. That�s what we are taught in GST, that�s what it taught me. And that�s something I want to share with everybody, who is striving to success, who is not afraid to change his life for better. I used to give all I got to the work and cooperation with GST wasn�t the exception. The most pleasant thing was that I got more than expected � because Mercedes car and Rolex watch are honorable awards!
+Our mission - is to distribute this information among as many people as possible. Because the greater the system is, the less vulnerable it is. Together we will reach the heights, realize the plans and earn our first million!
+
+                                </div>
+                            </div>
+                          </div>
+
+
+
+                        <div  class="success_story">
+                        <h3>Anatoly (country trainer, first sponsor of 4 cities, partner of business-club and pizzeria projects, Sevastopol)</h3>
+
+                        <img src="stories/Matanov.jpg"  alt=""  align=left hspace='5' vspace='0' width=200>
+                            <div class="success_story_short">
+                                 I�ve always wanted to see our people financially independent and wealthy. I spent over 23 years at sea, visited many countries that�s why I can judge: our people with their fine education and high potential deserve a better life. In 1993 I left my work on the ship having taken over the job on land and was carrying out my own business. At that time I had about 4 sources of income. I was looking for a system which would be able to unite people and raise the economy. And now I can say that I have found it.
+
+                                <div><a class="toggle_link" href="#">Read more</a></div>
+                                <div class="toggle_div success_story_full">
+I got acquainted with Robert on October 4. I was invited to the seminar �of Robert Kiosaki�s partner�. As a businessman I was at once interested in the programe of �Global System Trainings�, but the brightest impression was about Robert himself. I looked into his eyes and saw a boiling energy there. I understood that there was a person who knows HOW to solve our problems. The majority of Ukrainians work hard, have necessary skills and abilities, desire to earn, but at the same time they can�t be called financially successful. It is necessary to give them an opportunity to make money and GST provides such an opportunity. Hard work and talent should be paid off.   <br /><br />
+Robert impressed me with his strive to teach, to share his precious experience, with a sincere desire to help everybody. My life credo is: good people must unite and that is what happens in GST. GST is based on team principles: the priority is the relationships between people, an ability to be what you really are � thus, every member of the team is unique and irreplaceable. GST gives everybody an opportunity to display his or her strengths and to help others. <br /><br />
+Robert unites people around a wonderful and human idea; at the same time he has a system and a detailed plan of how to use it. I think that GST will help all of us to open our abilities to the full - both financially and spiritually.<br /><br />
+If speaking about my success, I have more contacts and partners now. My income has increased by four �fivefold and now makes about 10�000 $ a month plus bonuses. I am the first sponsor of 4 cities, a partner of business club and pizzeria. I believe that Robert Fletcher will teach how to open and realize one�s own and business potential of all who are ready to study.
+
+
+
+                                </div>
+                            </div>
+                          </div>
+
+
+
+
+                        <div  class="success_story">
+                        <h3>Svetlana (international sales trainer, Lugansk)</h3>
+
+                        <img src="stories/Omelchenko_svetlana.jpg"  alt=""  align=left hspace='5' vspace='0' width=200>
+                            <div class="success_story_short">
+                                 - Svetlana, when did you first meet honorary professor, Doctor/Academic Robert Flecher, millionaire-mentor?<br />
+
+- I met Robert in September, 2006. My friend called me and invited to visit an introductory meeting. To tell the truth I did not pay much attention to the information about Robert Flecher. I knew everything he talked about and I had read the literature which he showed on his classes.
+                                <div><a class="toggle_link" href="#">Read more</a></div>
+                                <div class="toggle_div success_story_full">
+                                - What attracted your attention in honorary professor, Doctor/Academic Robert Flecher, millionaire-mentor�s words? What was an incitement to you?
+<br /><br />
+- The word �system� attracted my attention. At that moment I had line business but I did not have real profit. I worked with children for 15 years (as a child psychologist), then I started doing network marketing, opened my own child�s center. Nevertheless I did not manage to accomplish all I wanted. Loss of income, six years of my life that are simply wasted, economic instability in our country played a great role. I understood that I did not want to stay �where I was�. I wanted to meet a person who could help me to develop my business further. And it was obvious that Robert could become such a mentor for me. That is why I made up my mind and signed a contract. I believed Robert and his �system�.
+<br /><br />
+- As far as I know you are married and have children. What was your family reaction?
+<br /><br />
+- To be honest my husband did not believe first that I could succeed. But when he saw real results he realized that I was right and we may trust Robert. Later we became family Country Trainers. I have two daughters (15 and 18 years). Due to GST my children saw much. They also read success books which are recommended by our millionaire-mentor, visit trainings and they like it very much. They want to build themselves their future and I respect their choice.
+<br /><br />
+- What results did you get during the first month of work in millionaire�s system?
+<br /><br />
+- During the first month I trebled my income. When I came to GST I had only debts and burning desire to become successful. I
+                                </div>
+                            </div>
+                          </div>
+
+
+                       <div style="clear:both"><a href="stories.php">Read all stories</a></div>
+
+
+
+
+
+
+
+                 </div>
+
+
+                   <script type="text/javascript">$("#page-3").attr({style:"display:none"})</script>
+            

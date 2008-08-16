@@ -1,0 +1,3 @@
+<%= label obj_name, 'Идентификатор (одинаковый для всех языковых версий и только строчными латинскими буквами!)' %><br />
+<%= text_field obj_name, :ident_name %> или выберите уже существующую  другую языковую версию
+<%= select(obj_name, :ident_num, obj.class.find(:all, :select => "ident_name, ident_num", :group => :ident_num, :limit => 10).collect { |it| [it.ident_num.to_s+" "+it.ident_name, it.ident_num] }, { :include_blank => true }) %>

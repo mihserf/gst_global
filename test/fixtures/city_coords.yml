@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  city_id: 1
+  city_ident_num: 1
+  coord: MyText
+
+two:
+  city_id: 1
+  city_ident_num: 1
+  coord: MyText

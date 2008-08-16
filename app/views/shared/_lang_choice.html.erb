@@ -1,0 +1,5 @@
+<%  langs.each do |lang|
+      path=request.path
+      link="<a href='"+path.sub(/(\w+)/,lang_id(lang))+"'>"+lang_id(lang)+"</a>" unless lang_id(lang)==lang_id(@lang) %>
+      <%=link%>
+ <%end%>

@@ -1,0 +1,36 @@
+<%= javascript_include_tag :fckeditor %>
+<% form_for(@country, :html => { :multipart => true } ) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label 'Язык' %><br />
+    <%= f.select(:lang,   Globalite.ui_locales, {:selected => (@country.lang.to_sym unless @country.lang.nil?)}) %>
+  </p>
+
+  <p>
+    <%=ident_choice(@country)%>
+  </p>
+  <p>
+    <%= f.label 'Название' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label 'Текст' %><br />
+    <%= fckeditor_textarea(:country, :body, :toolbarSet => 'Simple', :width => '100%', :height => '300px') %>
+  </p>
+
+  <p> карта:<br>
+    <% fields_for Map.new() do |country_f| %>
+    <%  map = Map.find(:last, :conditions => {:country_ident_num => @country.ident_num})  %>
+    <% unless  @country.new_record? || map.nil? %>
+      <p><%= image_tag map.public_filename(:view) %></p>
+    <%end%>
+    <%= country_f.file_field  :uploaded_data %>
+    <%end%>
+  </p>
+
+  <p>
+    <%= f.submit "Сохранить" %>
+  </p>
+<% end %>
+

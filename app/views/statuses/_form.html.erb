@@ -1,0 +1,34 @@
+
+
+<% form_for(@status) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label 'Язык' %><br />
+    <%= f.select(:lang,   Globalite.ui_locales, {:selected => (@status.lang.to_sym unless @status.lang.nil?)}) %>
+  </p>
+
+  <p>
+    <%=ident_choice(@status)%>
+  </p>
+
+  <p>
+    <%= f.label 'Название статуса (отображение в списке)' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label 'Название статуса (отображение у члена GST)' %><br />
+    <%= f.text_field :status %>
+  </p>
+  
+  <p>
+    <%= f.label 'порядковый номер отображения в списке' %><br />
+    <%numbers=[]; 1.upto(Status.count(:conditions => "lang='#{@lang.to_s}'")) {|i| numbers << i}%>
+    <%= f.select(:number, numbers) %>
+  </p>
+
+  <p>
+    <%= f.submit "Сохранить" %>
+  </p>
+<% end %>
+

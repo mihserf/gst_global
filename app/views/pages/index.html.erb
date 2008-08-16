@@ -1,0 +1,12 @@
+
+<%ident_name=nil%>
+<ul>
+<% for page in @pages %>
+  <%= "<br><br>" unless  ident_name==page.ident_name%>
+  <li style="list-style:none"><%=page.lang%>:  <a href="/<%=page.lang%>/<%=page.ident_name%>"><%=page.name%></a>
+  <div class='admin_edit_actions' style="font-size:10pt;  padding-bottom:7px"><%=link_to 'редактировать', edit_page_path(page)%> | <%=link_to 'удалить', page_path(page), :method => :delete, :confirm => 'подтвердите удаление'%></div>
+  </li>
+   
+  <%ident_name=page.ident_name%>
+<%end%>
+</ul>

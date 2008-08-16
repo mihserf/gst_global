@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title><%= :page_title.l %></title>
+
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+	<meta name="author" content="Michail Gaganov" />
+	<meta name="keywords" content="gst, global systems training, Fletcher" />
+	<meta name="description" content="global systems training" />
+	<meta name="robots" content="index, follow, noarchive" />
+	<meta name="googlebot" content="noarchive" />
+
+        <%= javascript_include_tag  "jquery-1.2.6.pack.js" %>
+	<%= javascript_include_tag  :defaults %>
+        <%= javascript_include_tag  "ui.core.js" %>
+        <%= javascript_include_tag  "ui.tabs.js" %>
+        <%= javascript_include_tag  "ui.tabs.js" %>
+        <%= javascript_include_tag  "jquery.cycle.all.pack.js" %>
+        <%= javascript_include_tag  "menu.js" %>
+        <%= javascript_include_tag  "own.js" %>
+
+	<%= stylesheet_link_tag  :style.l('style') %>
+
+
+</head>
+
+<body style="position:relative">
+<div id="top_imgs">
+	<img src="images/top_img1.jpg" id="top_img2" align="right"/>
+    <img src="images/top_img2.jpg" id="top_img2" align="right"/>
+    <img src="images/top_img3.jpg" id="top_img2" align="right"/>
+    <img src="images/top_img4.jpg" id="top_img2" align="right"/>
+    <img src="images/top_img5.jpg" id="top_img2" align="right"/>
+</div>
+<div id="wrap">
+<div id="top_menu">
+<%= render :partial => 'shared/menu_'+:menu.l('ru') %>
+</div>
+
+<div id="header" style="height:225px">
+	<div id="header_cont">
+    	<div id="header_cont_div">
+            <div id="header1">
+            <div id="flags"><a href="/ru"><img src="/images/flag_ru.gif" /></a><a href="/en"><img src="/images/flag_us.gif" /></a><a href="/ua"><img src="/images/flag_ua.gif" /></a></div>
+            </div>
+            <div id="header2">
+
+            </div>
+            <div id="header3">
+                <div id="logo"></div>
+                <div id="slogans" style="color:#FFFFFF;"></div>
+            </div>
+            <div id="header_shadow">
+            </div>
+		</div>
+
+    </div>
+    <div class="work"><div style="clear:both"></div>
+        <div id="header_tl"></div><div id="header_tr"></div>
+        <div id="header_l"></div><div id="header_r"></div>
+    </div>
+</div>
+
+<div id="content" style="height:100%">
+	<div id="content_div">
+            <div id="content_menu">
+                <%= yield :content_menu %>
+            </div>
+            <div id="content_cont">
+            <div id="content_cont_div">
+			<%= yield :layout %>
+            </div>
+
+            <div class="work"><div style="clear:both"></div>
+            	<div id="content_cont_l"></div><div id="content_cont_r"></div>
+            </div>
+        </div>
+	   		<div id="content_cont_footer" ></div>
+   		<div style="height:1px;"></div>
+    </div>  <!-- end of #content_div-->
+   <div class="work"><div style="clear:both"></div>
+    	<div id="content_l"></div><div id="content_r"></div>
+    </div>
+</div> <!-- end of #content-->
+
+<div id="footer">
+
+        <div id="footer_cont">
+        	<div id="footer_div">
+        	<a href="aboutus.php">About</a> <a href="tel.php">Contacts</a>
+                <%if admin?%>
+                   | <%= link_to 'Страны', countries_path %>
+                    <%= link_to 'Страницы', pages_path %>
+                    <%= link_to 'Тренеры', members_path %>
+                    <%= link_to 'Статусы', members_path %>
+                    <%= link_to 'Новости', events_path %>
+                    <%= link_to 'СМИ', articles_path %>
+                    <%= link_to 'Благотворительность', charities_path %>
+                    <%= link_to 'Статьи Джимма', jim_articles_path %>
+                   |
+                    <%= yield :admin_actions %>
+                <%end%>
+            </div>
+        </div>
+
+    <div class="work"><div style="clear:both"></div>
+        <div id="footer_l"></div><div id="footer_r"></div>
+        <div id="footer_bl"></div><div id="footer_br"></div>
+    </div>
+</div>
+
+</div>
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='http://counter.yadro.ru/hit?t13.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня' "+
+"border=0 width=88 height=31><\/a>")//--></script><!--/LiveInternet-->
+
+<script type="text/javascript">
+if (ie) setHeight("content");
+if (ie) setHeight("content_cont");
+</script>
+
+</body>
+
+</html>

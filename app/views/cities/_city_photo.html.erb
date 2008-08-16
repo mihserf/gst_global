@@ -1,0 +1,12 @@
+<div class="photo">
+  
+    <p><%= image_tag city_photo.public_filename(:view) unless city_photo.new_record?%></p>
+    
+    <%= file_field_tag 'photos[][uploaded_data]' %>
+
+    <%= link_to_function  image_tag("/images/delete_ico.gif",:alt=>"Удалить"), "$(this).parent().fadeOut('slow', function(){$(this).remove()});" %>
+
+    <%= check_box_tag 'photos[][main]', 1, false %>
+  
+
+</div>

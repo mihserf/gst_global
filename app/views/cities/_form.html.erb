@@ -1,0 +1,84 @@
+
+<script src="http://dev.jquery.com/view/tags/ui/latest/ui/ui.draggable.js"></script>
+<%= javascript_include_tag :fckeditor %>
+
+
+
+<script type='text/javascript'>
+    function destroy(controller,id){
+        $.post("/"+controller+"/destroy/"+id, { },  function(data){
+                    
+                    } );
+    }
+
+
+  $(document).ready(function(){
+    $("#city").draggable({
+        stop: function(ev, ui) {
+            $("input[name='city_coord[coord][top]']").val(ui.position.top);
+            $("input[name='city_coord[coord][left]']").val(ui.position.left);
+        }
+    });
+    $("#city_marker").draggable({
+        stop: function(ev, ui) {
+            $("input[name='city_coord[coord][top_marker]']").val(ui.position.top);
+            $("input[name='city_coord[coord][left_marker]']").val(ui.position.left);
+        }
+    });
+
+    $("#city_marker").draggable();
+    //$("#city")
+  });
+
+</script>
+
+<h3>Страна <%=@country.name%> (<%=lang_id(@country.lang)%>)</h3>
+<% form_for [@country,@city], :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :lang%>
+  <p>
+    <%=ident_choice(@city)%>
+  </p>
+  <p>
+    <%= f.label 'Название' %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label 'Текст' %><br />
+    <%= fckeditor_textarea(:city, :body, :toolbarSet => 'Simple', :width => '100%', :height => '300px') %>
+  </p>
+
+
+
+  <div id="city_photos">
+    <%= render :partial => 'existing_city_photo', :collection => CityPhoto.find(:all, :conditions => {:city_ident_num => @city.ident_num})  unless @city.new_record?  %>
+
+  </div>
+  <%= add_link 'Добавить фото', 'city_photos' %>
+
+<%if ((map=Map.find(:first,:conditions =>{:country_ident_num => @country.ident_num})) && (@city.new_record?!=true)) %>
+    <%@city_coord = CityCoord.find( :first,:conditions => {:city_ident_num => @city.ident_num})
+%>
+      <%#@city_coord = CityCoord.find_or_create_by_city_ident_num(@city.ident_num)
+    %>
+      <%= hidden_field_tag "city_coord[coord][top]", (@city_coord.coord[:top] rescue "0")  %>
+      <%= hidden_field_tag "city_coord[coord][left]", (@city_coord.coord[:left] rescue "0") %>
+      <%= hidden_field_tag "city_coord[coord][top_marker]", (@city_coord.coord[:top_marker] rescue "0") %>
+      <%= hidden_field_tag "city_coord[coord][left_marker]", (@city_coord.coord[:left_marker] rescue "0") %>
+      <%= hidden_field_tag "city_coord[city_ident_num]", (@city.ident_num) %>
+
+<div id="map">
+  <div style="height:<%=map.height%>px; width:<%=map.width%>px; margin:0 auto">
+      <div style="position:absolute; background:url('<%=map.public_filename%>') no-repeat left top; width:<%=map.width%>px; height:<%=map.height%>px;">
+          <div id='city' style="position:absolute; width:40px; height:14px; left:<%=@city_coord.coord[:left] rescue "0"%>px; top:<%=@city_coord.coord[:top] rescue "0"%>px; display:block"><%=@city.name%></div>
+          <div id='city_marker' style="position:absolute; background:#ccc; width:8px; height:8px; left:<%=@city_coord.coord[:left_marker] rescue "0"%>px; top:<%=@city_coord.coord[:top_marker] rescue "0"%>px; display:block">*</div>
+      </div>
+    </div>
+</div>
+<%end%>
+  <p>
+    <%= f.submit "Сохранить" %>
+  </p>
+<% end %>
+

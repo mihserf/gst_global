@@ -1,0 +1,7 @@
+<%= javascript_include_tag :fckeditor %>
+<%form_for @page do |f|%>
+<%= f.error_messages %>
+<%=f.text_field :name%>
+<%= fckeditor_textarea(:page, :content, :toolbarSet => 'Simple', :width => '100%', :height => '300px') %>
+<%=f.submit 'Сохранить изменения' %>
+<%end%>

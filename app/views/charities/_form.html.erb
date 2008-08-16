@@ -1,0 +1,31 @@
+<%= javascript_include_tag :fckeditor %>
+<% form_for(@charity, :html => { :multipart => true } ) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label 'Язык' %><br />
+    <%= f.select(:lang,   Globalite.ui_locales, {:selected => (@charity.lang.to_sym unless @charity.lang.nil?)}) %>
+  </p>
+
+  <p>
+    <%=ident_choice(@charity)%>
+  </p>
+  <p>
+    <%= f.label 'Название' %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label 'Анонс' %><br />
+    <%= fckeditor_textarea(:charity, :short_text, :toolbarSet => 'Simple', :width => '100%', :height => '220px') %>
+  </p>
+  <p>
+    <%= f.label 'Текст' %><br />
+    <%= fckeditor_textarea(:charity, :body, :toolbarSet => 'Simple', :width => '100%', :height => '300px') %>
+  </p>
+
+  <p>
+    <%= f.submit "Сохранить" %>
+  </p>
+<% end %>
+

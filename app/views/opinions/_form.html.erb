@@ -1,0 +1,33 @@
+<%= javascript_include_tag :fckeditor %>
+
+<h3>Город <%=@city.name%> (<%=lang_id(@city.lang)%>)</h3>
+<% form_for [@city,@opinion], :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :lang%>
+  <p>
+    <%= f.label 'Автор' %><br />
+    <%= f.text_field :author %>
+  </p>
+
+  <p>
+    <%=ident_choice(@opinion)%>
+  </p>
+
+  <p>
+    <% fields_for OpinionPhoto.new() do |opinion_f| %>
+    <%  photo = OpinionPhoto.find(:last, :conditions => {:opinion_ident_num => @opinion.ident_num})  %>
+    <% unless  @opinion.new_record? || photo.nil? %>
+      <p><%= image_tag photo.public_filename(:view) %></p>
+    <%end%>
+    <%= opinion_f.file_field  :uploaded_data %>
+    <%end%>
+  </p>
+  <p>
+    <%= f.label 'Текст' %><br />
+    <%= fckeditor_textarea(:opinion, :body, :toolbarSet => 'Simple', :width => '100%', :height => '300px') %>
+  </p>
+  <p>
+    <%= f.submit "Сохранить" %>
+  </p>
+<% end %>
+
