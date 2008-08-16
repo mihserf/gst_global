@@ -13,3 +13,6 @@
 [submodule "vendor/plugins/jrails"]
 	path = vendor/plugins/jrails
 	url = git://github.com/aaronchi/jrails.git
+[submodule "vendor/plugins/globalize"]
+	path = vendor/plugins/globalize
+	url = git://github.com/pic/globalize.git
